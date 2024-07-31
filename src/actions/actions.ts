@@ -1,6 +1,7 @@
 'use server';
 
 import prisma from '@/lib/db';
+import { revalidatePath } from 'next/cache';
 
 export async function addTask(formData: FormData) {
 	await prisma.task.create({
@@ -8,4 +9,5 @@ export async function addTask(formData: FormData) {
 			title: formData.get('title') as string,
 		},
 	});
+	revalidatePath('/');
 }
