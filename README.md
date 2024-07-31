@@ -10,3 +10,5 @@ Issues and solutions:
 
 1. before using the cmd command "docker compose up", you need to open the docker desktop app on your pc (you might need to close your current nextjs instance and then run "docker compose up" again
 2. add revalidatePath after task creation to auto update page without refresh
+
+test
