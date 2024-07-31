@@ -1,16 +1,9 @@
 import { addTask } from '@/actions/actions';
+import prisma from '@/lib/db';
 
 export default async function Home() {
-	const tasks = [
-		{
-			id: 1,
-			title: 'Task 1',
-		},
-		{
-			id: 2,
-			title: 'Task 2',
-		},
-	];
+	const tasks = await prisma.task.findMany();
+
 	return (
 		<main className='bg-zinc-200 flex min-h-screen flex-col items-center pt-10 text-black'>
 			<h1 className='text-3xl font-medium'>All tasks:</h1>
@@ -28,3 +21,4 @@ export default async function Home() {
 		</main>
 	);
 }
+
