@@ -7,3 +7,4 @@ CREATE TABLE "Task" (
 
     CONSTRAINT "Task_pkey" PRIMARY KEY ("id")
 );
+
